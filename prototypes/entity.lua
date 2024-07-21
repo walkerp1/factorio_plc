@@ -123,6 +123,9 @@ function unit_entity()
 		priority = "high",
 		shift = { 0.3, 0.45 },
 	}}
+	entity.se_allow_in_space = true
+	entity.next_upgrade = nil
+	table.insert(entity.flags, "not-upgradable")
 	return entity
 end
 
@@ -131,5 +134,5 @@ local output = io_entity("output")
 local unit = unit_entity()
 
 if input ~= nil and output ~= nil and unit ~= nil then
-	data:extend({ input, output, unit, })
+	data:extend({ input, output, unit})
 end
